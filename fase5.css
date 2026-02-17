@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Starfield (JS Generated) --- */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    animation: twinkle infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- The Meteor (Purple & Flaming) --- */
+.meteor-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Scalling up to 2x to look closer */
+    transform: translate(-50%, -50%) rotate(-45deg) scale(2);
+    z-index: 10;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8));
+    animation: meteorFloat 8s ease-in-out infinite;
+    opacity: 0;
+    /* Starts hidden for the transition */
+    transition: opacity 3s ease-in-out;
+    /* Slow fade in */
+}
+
+/* Class to trigger appearance */
+.meteor-container.visible {
+    opacity: 1;
+}
+
+@keyframes meteorFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(2) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(-43deg) scale(2) translateY(-20px);
+    }
+}
+
+.meteor {
+    position: relative;
+    width: 300px;
+    height: 6px;
+}
+
+.head {
+    position: absolute;
+    right: 0;
+    top: -9px;
+    /* Adjusted for larger head */
+    width: 25px;
+    /* Bigger head */
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    /* Aggressive Flaming Core */
+    box-shadow:
+        0 0 15px #e0b0ff,
+        0 0 30px #8a2be2,
+        0 0 50px #ff0055,
+        /* Added Red/Pink for aggression */
+        0 0 70px #4b0082;
+    animation: pulseCore 0.1s infinite alternate;
+    /* Faster pulse */
+}
+
+@keyframes pulseCore {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.tail {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 100%;
+    height: 100%;
+    /* Violet/Purple Flame Tail with Red/Pink hints */
+    background: linear-gradient(to right, transparent, rgba(75, 0, 130, 0.5), rgba(255, 0, 85, 0.4), rgba(138, 43, 226, 0.9), #fff);
+    border-radius: 50px;
+    filter: blur(3px);
+    animation: flickerTail 0.08s infinite alternate;
+    /* Very fast flicker */
+}
+
+@keyframes flickerTail {
+    from {
+        opacity: 1;
+        transform: scaleY(1) translateX(0);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: scaleY(1.2) translateX(-5px);
+    }
+
+    /* Erratic movement */
+}
+
+/* Secondary tail for extra chaos */
+.meteor::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 90%;
+    height: 5px;
+    background: linear-gradient(to right, transparent, #ff0055, #fff);
+    /* Aggressive Red */
+    filter: blur(5px);
+    opacity: 0.8;
+    animation: flickerTail 0.1s infinite alternate-reverse;
+}
+
+/* --- Distant Planet --- */
+.planet-distant {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    background: #2E67F8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2E67F8;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: 2;
+}
+
+.planet-distant.visible {
+    opacity: 0.6;
+    /* Dimly lit */
+}
+
+/* --- The Planet (The Horizon) --- */
+/* --- The Planet (The Horizon) --- */
+.planet-container {
+    position: absolute;
+    /* Move it up so the horizon is clearly visible at the bottom of the screen */
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300vw;
+    height: 300vw;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    border-radius: 50%;
+    /* Blue/Purple atmosphere glow */
+    box-shadow: 0 0 100px rgba(46, 103, 248, 0.6), 0 0 200px rgba(138, 43, 226, 0.4);
+    overflow: hidden;
+}
+
+.planet-container.visible {
+    opacity: 1;
+}
+
+.planet {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Bright Blue Surface Gradient */
+    background: radial-gradient(circle at 50% 0%, #2b5aff, #021a4f, #000);
+    position: relative;
+    z-index: 5;
+    /* Texture/Surface details - Softer Clouds */
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.2), transparent 60%),
+        radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.05), transparent 30%),
+        radial-gradient(ellipse at 80% 40%, rgba(255, 255, 255, 0.05), transparent 40%),
+        repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.02) 0px, transparent 1px, transparent 15px);
+    background-size: 100% 100%, 200% 200%, 200% 200%, 100% 100%;
+    /* Slower rotation for grandeur */
+    animation: planetRotation 60s linear infinite;
+}
+
+@keyframes planetRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.planet-atmosphere {
+    position: absolute;
+    top: -2px;
+    /* Thin rim */
+    left: 0;
+    width: 100%;
+    height: 150px;
+    /* Purple glow reflecting on the atmosphere */
+    background: radial-gradient(ellipse at center, rgba(186, 85, 211, 0.8), transparent 70%);
+    opacity: 0.5;
+    z-index: 6;
+    pointer-events: none;
+    /* Pulse effect simulating meteor light */
+    animation: atmospherePulse 5s infinite alternate;
+}
+
+@keyframes atmospherePulse {
+    from {
+        opacity: 0.3;
+        transform: scaleY(1);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: scaleY(1.2);
+    }
+}
+
+/* --- Surface State (Static Meteor) --- */
+/* The meteor stays in its floating animation, we just ensure it's positioned right */
+.meteor-container.surface-view {
+    /* Optional: Move it slightly higher or lower if needed for composition */
+    transition: top 2s ease-in-out;
+    top: 40%;
+}
+
+/* Update Meteor Look for Reference Image (Purple/White Streak) */
+.meteor-container {
+    filter: drop-shadow(0 0 25px rgba(186, 85, 211, 1));
+    /* Intense Purple Glow */
+}
+
+.head {
+    /* Stable bright white core */
+    background: #fff;
+    box-shadow:
+        0 0 20px #fff,
+        0 0 40px #e0b0ff,
+        0 0 80px #8a2be2;
+    animation: none;
+    /* Stable */
+}
+
+.tail {
+    /* Long straight purple streak */
+    background: linear-gradient(to right, transparent, rgba(75, 0, 130, 0), rgba(138, 43, 226, 0.8), #fff);
+    height: 4px;
+    /* Thinner animation-style tail */
+    filter: blur(1px);
+}
+
+
+#lyrics {
+    position: fixed;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 100;
+    width: 80%;
+}
+
+/* --- Buttons --- */
+#end-btn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+#end-btn.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#end-btn:hover {
+    background: white;
+    color: #1b2735;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    #lyrics {
+        font-size: 1.1rem;
+        bottom: 10%;
+        width: 90%;
+    }
+
+    #end-btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .planet-container {
+        width: 400vw;
+        /* Make planet look even bigger/flatter relative to small screen */
+        height: 400vw;
+        bottom: -120vh;
+    }
+}

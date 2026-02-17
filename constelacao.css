@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at bottom, #0b0f2a 0%, #000000 100%);
+    overflow-x: hidden;
+    min-height: 200vh;
+    /* acompanha seu mapa */
+    position: relative;
+}
+
+
+/* Camadas ocupam a tela inteira */
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    /* não é mais fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    /* mesma altura do mapa */
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.container {
+    position: relative;
+    z-index: 2;
+    /* mapa acima das estrelas */
+}
+
+
+/* Fundo animado continua */
+
+/* Camadas ocupam a tela inteira */
+.stars,
+.stars2,
+.stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Estrelas médias */
+.stars {
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        50px 30px white,
+        120px 200px #ddd,
+        300px 80px #f5f5f5,
+        400px 220px #ffe9a3,
+        600px 130px white,
+        200px 170px #ddd,
+        350px 200px white,
+        390px 150px #f5f5f5,
+        230px 190px white,
+        320px 150px #ddd,
+        150px 60px white,
+        530px 70px #ffe9a3,
+        700px 250px white,
+        800px 100px #ddd,
+        900px 300px white,
+        1000px 180px #f5f5f5,
+        1100px 220px white,
+        1200px 90px #ffe9a3,
+        1300px 160px white,
+        1400px 60px #ddd;
+}
+
+/* Estrelas pequenas (mais numerosas) */
+.stars2 {
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow:
+        15px 15px white,
+        125px 35px white,
+        550px 80px white,
+        610px 120px white,
+        275px 90px white,
+        230px 10px white,
+        120px 130px white,
+        300px 130px white,
+        220px 115px white,
+        350px 250px white,
+        450px 190px white,
+        520px 310px white,
+        640px 280px white,
+        710px 50px white,
+        820px 200px white,
+        930px 140px white,
+        1040px 260px white,
+        1150px 170px white,
+        1260px 80px white,
+        1370px 300px white,
+        1480px 210px white,
+        1590px 120px white;
+}
+
+/* Micro estrelas quase poeira */
+.stars3 {
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        80px 40px rgba(255, 255, 255, 0.4),
+        180px 220px rgba(255, 255, 255, 0.4),
+        260px 150px rgba(255, 255, 255, 0.4),
+        340px 90px rgba(255, 255, 255, 0.4),
+        420px 300px rgba(255, 255, 255, 0.4),
+        510px 60px rgba(255, 255, 255, 0.4),
+        680px 200px rgba(255, 255, 255, 0.4),
+        760px 110px rgba(255, 255, 255, 0.4),
+        890px 240px rgba(255, 255, 255, 0.4),
+        980px 70px rgba(255, 255, 255, 0.4),
+        1120px 190px rgba(255, 255, 255, 0.4),
+        1250px 260px rgba(255, 255, 255, 0.4),
+        1380px 140px rgba(255, 255, 255, 0.4);
+}
+
+#sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.star-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+}
+
+
+
+
+/* Mapa */
+.mapa {
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    z-index: 5;
+}
+
+/* Linha branca luminosa */
+.linhas line {
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 0.6;
+    /* mais fina */
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
+    transition: 0.3s ease;
+}
+
+@keyframes brilhoLinha {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+.linhas line {
+    animation: brilhoLinha 4s infinite ease-in-out;
+}
+
+
+/* Fases */
+.fase circle {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 6px white);
+    transition: 0.3s ease;
+}
+
+.fase text {
+    fill: white;
+    font-size: 4px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.fase {
+    cursor: pointer;
+}

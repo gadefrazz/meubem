@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(8, 8, 15) 0%, rgb(20, 25, 60) 100%);
+    overflow: hidden;
+}
+
+/* Conteúdo central */
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.center-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.start-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.start-btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Estrelas */
+.stars,
+.stars2 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+}
+
+.stars {
+    box-shadow:
+        50px 30px white,
+        120px 200px #ddd,
+        300px 80px #f5f5f5,
+        400px 220px #ffe9a3,
+        600px 130px white,
+        200px 170px #ddd,
+        350px 200px white,
+        390px 150px #f5f5f5,
+        230px 190px white,
+        320px 150px #ddd,
+        150px 60px white,
+        530px 70px #ffe9a3;
+    animation: anim-stars 25s linear infinite;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    top: 100vh;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    box-shadow:
+        20px 10px white,
+        100px 210px #ddd,
+        580px 80px white,
+        400px 220px #f5f5f5,
+        650px 130px #ffe9a3,
+        200px 170px white,
+        350px 200px #ddd,
+        390px 150px white,
+        230px 190px #f5f5f5,
+        320px 150px white;
+}
+
+.stars2 {
+    width: 1px;
+    height: 1px;
+    box-shadow:
+        615px 15px white,
+        225px 35px white,
+        350px 80px white,
+        210px 120px white,
+        275px 90px white,
+        230px 10px white,
+        120px 130px white,
+        300px 130px white,
+        220px 115px white;
+    animation: anim-stars 50s linear infinite;
+}
+
+.stars2::after {
+    content: "";
+    position: absolute;
+    top: 100vh;
+    width: 1px;
+    height: 1px;
+    box-shadow:
+        15px 15px white,
+        125px 35px white,
+        550px 80px white,
+        610px 120px white,
+        275px 90px white,
+        230px 10px white,
+        120px 130px white,
+        300px 130px white,
+        220px 115px white;
+}
+
+/* Movimento vertical infinito */
+@keyframes anim-stars {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 768px) {
+    .center-content h1 {
+        font-size: 36px;
+    }
+
+    .start-btn {
+        font-size: 18px;
+        padding: 14px 40px;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .center-content h1 {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .start-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
