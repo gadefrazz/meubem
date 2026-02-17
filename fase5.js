@@ -87,87 +87,87 @@ onload = () => {
         { text: "Rastro.", time: 56000 },
         { text: "Clarão breve no vazio.", time: 59000 },
 
-        { text: "Segui meu caminho solitário", time: 64000 },
-        { text: "até o dia em que, ao longe,", time: 68000 },
-        // Trigger: Distant Planet appears
-        { text: "avistei um ponto azul.", time: 72000, showDistant: true },
+        { texto: "Segui meu caminho solitário", tempo: 64000 },
+        { texto: "até o dia em que, ao longe",, tempo: 68.000 },
+        // Gatilho: Planeta Distante aparece
+        { texto: "avistei um ponto azul.", tempo: 72.000, mostrarDistante: verdadeiro },
 
-        { text: "Pequeno.", time: 76000 },
-        { text: "Distante.", time: 78000 },
-        { text: "Improvável.", time: 80000 },
+        { texto: "Pequeno.", tempo: 76.000 },
+        { texto: "Distante.", tempo: 78.000 },
+        { texto: "Improvável.", tempo: 80.000 },
 
-        { text: "E algo aconteceu.", time: 84000 },
-        { text: "Não sei explicar se foi gravidade,", time: 87000 },
-        { text: "destino,", time: 90000 },
-        { text: "ou simples acaso cósmico —", time: 93000 },
-        { text: "mas fui puxado.", time: 96000 },
+        { texto: "E algo aconteceu.", tempo: 84000 },
+        { texto: "Não sei explicar se foi gravidade",, tempo: 87.000 },
+        { texto: "destino",, tempo: 90.000 },
+        { texto: "ou simples acaso cósmico", tempo: 93.000 },
+        { texto: "mas fui puxado.", tempo: 96.000 },
 
-        { text: "E não foi ruim.", time: 100000 },
-        { text: "Pela primeira vez,", time: 103000 },
-        { text: "não era queda.", time: 106000 },
-        { text: "Era atração.", time: 109000 },
+        { texto: "E não foi ruim.", tempo: 100.000 },
+        { texto: "Pela primeira vez vez",, tempo: 103000 },
+        { texto: "não era queda.", tempo: 106000 },
+        { texto: "Era atração.", tempo: 109000 },
 
-        { text: "Eu gostei da sensação", time: 114000 },
-        { text: "de ser absorvido por aquele ponto misterioso.", time: 118000 },
+        { texto: "Eu gosto da sensação", tempo: 114000 },
+        { texto: "de ser absorvido por aquele ponto misterioso.", tempo: 118000 },
 
-        { text: "E então eu descobri:", time: 123000 },
-        // Trigger: Surface Reveal (Home)
-        { text: "aquele ponto era um mundo.", time: 127000, startSurface: true },
+        { texto: "E então eu descobri:", tempo: 123000 },
+        // Gatilho: Revelação de superfície (Início)
+        { texto: "aquele ponto era um mundo.", tempo: 127000, superficção inicial: verdadeiro },
 
-        { text: "Um mundo que, mesmo não sendo sol,", time: 132000 },
-        { text: "me deu atmosfera.", time: 136000 },
-        { text: "Me deu céu.", time: 139000 },
-        { text: "Me deu órbita.", time: 142000 },
+        { texto: "Um mundo que, mesmo não sendo sol,", tempo: 132000 },
+        { texto: "me deu atmosfera.", tempo: 136000 },
+        { texto: "Me deu céu.", tempo: 139000 },
+        { texto: "Me deu órbita.", tempo: 142000 },
 
-        { text: "Você não me queimou como estrela.", time: 146000 },
-        { text: "Você me sustentou como planeta.", time: 150000 },
+        { texto: "Você não me fez como estrela.", tempo: 146000 },
+        { texto: "Você me sustentou como planeta.", tempo: 150.000 },
 
-        { text: "Agora eu orbito —", time: 155000 },
-        { text: "não como pedra perdida,", time: 158000 },
-        { text: "mas como presença constante.", time: 161000 },
+        { texto: "Ágora eu orbito", tempo: 155000 },
+        { texto: "não como pedra perdida",, tempo: 158.000 },
+        { texto: "mas como presença constante.", tempo: 161000 },
 
-        { text: "Eu ilumino quando passo.", time: 165000 },
-        { text: "Você me atrai com delicadeza gravitacional.", time: 169000 },
-        { text: "Eu deixei de ser apenas rastro", time: 174000 },
-        { text: "para me tornar movimento compartilhado.", time: 178000 },
+        { texto: "Eu ilumino quando passo.", tempo: 165000 },
+        { texto: "Você me atrai com delicadeza gravitacional.", tempo: 169000 },
+        { texto: "Eu deixei de ser apenas rastro", tempo: 174000 },
+        { texto: "para me tornar movimento compartilhado.", tempo: 178000 },
 
-        { text: "Você me tirou da solidão do universo.", time: 183000 },
+        { texto: "Voque-me tirou da solidez do universo.", tempo: 183000 },
 
-        { text: "E hoje, se ainda sou meteoro,", time: 188000 },
-        { text: "sou um que encontrou", time: 191000 },
-        { text: "um lugar no céu", time: 194000 },
-        { text: "onde não precisa mais se perder.", time: 197000 },
+        { texto: "E hoje, se ainda sou meteoro",, tempo: 188000 },
+        { texto: "sou um que encontro", tempo: 191000 },
+        { texto: "um lugar no céu", tempo: 194000 },
+        { texto: "onde não precisa mais se perder.", tempo: 197000 },
 
-        { text: "", time: 205000, end: true }
+        { texto: "", tempo: 205000, fim: verdadeiro }
     ];
 
-    function startLyrics() {
-        lyricsData.forEach((line) => {
-            setTimeout(() => {
+    diversão letras iniciais() {
+        letrasData.parágrafo cada hum((linha) => {
+            definirTempo limite(() => {
 
-                if (line.showDistant) {
-                    showDistantPlanet();
+                se (linha.mais distanteDistante) {
+                    maisrarPlanetaDistante();
                 }
 
-                if (line.startSurface) {
-                    startSurfaceSequence();
+                se (linha.superficção inicial) {
+                    iniciarSequência de Superfícia();
                 }
 
-                if (line.end) {
+                se (linha.fim) {
                     // Fim da cena
-                    // Assuming endBtn is defined or will be added.
-                    const endBtn = document.getElementById('end-btn');
-                    if (endBtn) {
-                        endBtn.classList.add('visible');
+                    // Supondo que endBtn esteja definido ou seja indicado.
+                    const fimBtn = documento.obterElementoPorId('fim-btn');
+                    se (fimBtn) {
+                        fimBtn.lista de aulas.adicionário('visível');
                     }
-                    return;
+                    retornar;
                 }
 
-                // Fade out do texto anterior
-                lyricsContainer.style.opacity = 0;
+                // Desvanecer do texto anterior
+                letrasContainer.estilo.opacidade = 0;
 
-                if (line.text) { // Só mostra se tiver texto
-                    setTimeout(() => {
+                se (linha.texto) { // Só mais se tiver texto
+                    definirTempo limite(() => {
                         // Troca o texto e Fade in
                         lyricsContainer.innerText = line.text;
                         lyricsContainer.style.opacity = 1;
@@ -180,3 +180,4 @@ onload = () => {
 
     startLyrics();
 };
+
