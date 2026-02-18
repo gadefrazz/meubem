@@ -326,20 +326,66 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     #lyrics {
-        font-size: 1.1rem;
-        bottom: 10%;
+        font-size: 1.2rem;
+        bottom: 25%;
+        /* Move up slightly to not cover planet too much */
         width: 90%;
+        line-height: 1.4;
     }
 
     #end-btn {
         font-size: 1.2rem;
         padding: 10px 20px;
+        width: 60%;
     }
 
+    /* Adjust Meteor for Mobile Portrait */
+    .meteor-container {
+        /* Smaller scale for mobile */
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.2);
+    }
+
+    @keyframes meteorFloat {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) rotate(-45deg) scale(1.2) translateY(0);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotate(-43deg) scale(1.2) translateY(-20px);
+        }
+    }
+
+    /* Adjust Distant Planet to be more visible */
+    .planet-distant {
+        top: 30%;
+        left: 80%;
+        /* Closer to right edge but visible */
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Massive Horizon for Mobile */
     .planet-container {
-        width: 400vw;
-        /* Make planet look even bigger/flatter relative to small screen */
-        height: 400vw;
-        bottom: -120vh;
+        width: 300%;
+        /* Wider than screen */
+        height: 100vh;
+        /* take up bottom */
+        top: auto;
+        bottom: -40%;
+        /* Anchor to bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50% 50% 0 0;
+        /* Dome shape */
+        box-shadow: 0 -10px 80px rgba(138, 43, 226, 0.8);
+        /* Stronger glow */
+    }
+
+    .planet {
+        animation: planetRotation 60s linear infinite;
+        background-size: 400% 400%;
+        /* Bigger texture for small screen */
     }
 }
