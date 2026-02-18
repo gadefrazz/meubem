@@ -327,9 +327,9 @@ body {
 @media (max-width: 600px) {
     #lyrics {
         font-size: 1.1rem;
-        /* Position relative to top so it stays close to the meteor (at top: 35%) */
+        /* Positioned ABOVE the meteor (which is at 35%) */
         bottom: auto;
-        top: 55%;
+        top: 15%;
         width: 85%;
         line-height: 1.5;
     }
