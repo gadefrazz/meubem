@@ -324,7 +324,6 @@ body {
 }
 
 /* Mobile Responsiveness */
-/* Mobile Responsiveness */
 @media (max-width: 600px) {
     #lyrics {
         font-size: 1.1rem;
@@ -369,17 +368,16 @@ body {
 
     /* Massive Horizon for Mobile - Flatter Curve */
     .planet-container {
-        width: 600vw;
-        /* Extremely wide to make the curve flatter */
-        height: 600vw;
+        width: 400vw;
+        /* Safer width */
+        height: 400vw;
         left: 50%;
         transform: translateX(-50%);
         top: auto;
-        bottom: -560vw;
-        /* Push mostly offscreen so only the top edge is visible */
+        bottom: -360vw;
+        /* Adjusted to match new width */
         border-radius: 50%;
         box-shadow: 0 -20px 100px rgba(138, 43, 226, 0.7);
-        /* Soft glow */
     }
 
     .planet {
